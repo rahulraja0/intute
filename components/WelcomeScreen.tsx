@@ -52,7 +52,7 @@ export default function WelcomeScreen() {
   // Trigger the entrance animation shortly after the component mounts.
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
-    
+
     // Check if API key is selected
     const checkKey = async () => {
       if (window.aistudio) {
@@ -74,7 +74,7 @@ export default function WelcomeScreen() {
       await window.aistudio.openSelectKey();
       // Proceed to the app after triggering the dialog as per instructions
     }
-    
+
     setIsExiting(true);
     // Wait for the exit animation to complete before changing the UI state.
     setTimeout(() => {
@@ -84,9 +84,8 @@ export default function WelcomeScreen() {
 
   return (
     <div
-      className={`welcome-screen-shroud ${isVisible ? 'visible' : ''} ${
-        isExiting ? 'exiting' : ''
-      }`}
+      className={`welcome-screen-shroud ${isVisible ? 'visible' : ''} ${isExiting ? 'exiting' : ''
+        }`}
     >
       <div className="atmosphere" />
       <div className="floating-name-container">
@@ -122,7 +121,7 @@ export default function WelcomeScreen() {
               fill="currentColor"
             />
           </svg>
-          <span>Powered by Gemini</span>
+          <span>Powered by Rahul</span>
         </div>
 
         {!hasKey && (
